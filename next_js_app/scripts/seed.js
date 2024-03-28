@@ -5,17 +5,19 @@ async function seedUsers(client) {
   try {
     await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
     // Create the "users" table if it doesn't exist
+    // const createTable = await client.sql`
+    // ALTER TABLE games ADD CONSTRAINT player2Id_userId FOREIGN KEY (player2Id) REFERENCES users(Id) 
+    // `;
     const createTable = await client.sql`
-      CREATE TABLE IF NOT EXISTS users (
-        id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-        name VARCHAR(255) NOT NULL,
-        firstName TEXT NOT NULL,
-        secondName TEXT NOT NULL,
-        password TEXT NOT NULL
+    CREATE TABLE IF NOT EXISTS matches (
+      id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+      player1Score int NOT NULL,
+      player2Score int NOT NULL,
+      date DATE NULL
       );
-    `;
+  `;
 
-    console.log(`Created "users" table`);
+    console.log(`Created links before games and users table`);
 
     // Insert data into the "users" table
     // const insertedUsers = await Promise.all(
