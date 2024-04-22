@@ -1,0 +1,9 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    width: min(95%, 1300px);
+    margin: 0 auto;
+}

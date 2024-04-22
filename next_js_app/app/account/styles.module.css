@@ -1,0 +1,27 @@
+.register_form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.register_form label {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    align-items: center;
+}
+
+.register_form label input {
+    border: 1px solid #b4b4b4; 
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 18px;
+    
+}
+
+.register_form label input:focus-visible {
+    outline: none;
+    border-bottom-color: aquamarine;
+    border-right-color: aquamarine;
+}
